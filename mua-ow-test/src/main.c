@@ -1,0 +1,1 @@
+#include <stdio.h>int main(void){    printf("Mua OpenWrt Test\n");    return 0;}
