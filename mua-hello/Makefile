@@ -5,7 +5,7 @@ PKG_VERSION:=2016-08-18
 PKG_RELEASE=$(PKG_SOURCE_VERSION)
 
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_URL:=git@git.muabaoba.com:depot/mua-ow-hello.git
+PKG_SOURCE_URL:=git@git.muabaobao.com:depot/mua-ow-hello.git
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
 PKG_SOURCE_VERSION:=HEAD
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_SOURCE_VERSION).tar.gz
