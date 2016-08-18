@@ -25,7 +25,11 @@ define Package/bridge/description
 endef
 
 define Build/Configure
-	true
+  true
+endef
+
+define Build/Prepare
+  mkdir -p $(PKG_BUILD_DIR)
 endef
 
 define Build/Compile
