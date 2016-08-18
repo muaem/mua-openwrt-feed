@@ -1,7 +1,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=mua-ow-hello
-PKG_VERSION:=0.0.1
+PKG_VERSION:=2016-08-18
 PKG_RELEASE=$(PKG_SOURCE_VERSION)
 
 PKG_SOURCE_PROTO:=git
@@ -25,18 +25,19 @@ define Package/bridge/description
 endef
 
 define Build/Configure
-  true
+	true
 endef
 
 define Build/Prepare
-  mkdir -p $(PKG_BUILD_DIR)
+	mkdir -p $(PKG_BUILD_DIR)
+	$(CP) ./src/* $(PKG_BUILD_DIR)/
 endef
 
 define Build/Compile
-  $(TARGET_CC) $(TARGET_CFLAGS) $(EXTRA_CFLAGS) -Wall -Werror -o $(PKG_BUILD_DIR)/hello src/hello.c
+	$(TARGET_CC) $(TARGET_CFLAGS) $(EXTRA_CFLAGS) -Wall -Werror -o $(PKG_BUILD_DIR)/hello $(PKG_BUILD_DIR)/hello.c
 endef
 
-define Package/mtk-linkit-webui/install
+define Package/mua-ow-hello/install
 	$(INSTALL_DIR) $(1)/usr/local/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/etc/hello.conf $(1)/etc/hello.conf
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/hello $(1)/usr/local/bin
