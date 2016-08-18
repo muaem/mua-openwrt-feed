@@ -1,0 +1,1 @@
+#include <stdio.h>int main(void){    printf("Hello OpenWrt from Mua~~\n");    return 0;}
