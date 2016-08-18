@@ -39,8 +39,8 @@ endef
 
 define Package/mua-ow-hello/install
 	$(INSTALL_DIR) $(1)/usr/local/bin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/etc/hello.conf $(1)/etc/hello.conf
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/hello $(1)/usr/local/bin
+	$(CP) ./files/* $(1)/
 endef
 
 $(eval $(call BuildPackage,mua-ow-hello))
