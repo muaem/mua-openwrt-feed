@@ -14,7 +14,7 @@ PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_SOURCE_VERSION).tar.gz
 include $(INCLUDE_DIR)/package.mk
 
 define Package/mua-ow-hello
-  SECTION:=utils
+  SECTION:=Mua applications
   CATEEGORY:=Mua applications
   TITLE:=Mua OW Hello
   DEPENDS:=+libmraa +libupm-pn532 +libubus +libubox

@@ -13,7 +13,7 @@ PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_SOURCE_VERSION).tar.gz
 include $(INCLUDE_DIR)/package.mk
 
 define Package/mua-ow-test
-  SECTION:=utils
+  SECTION:=Mua applications
   CATEEGORY:=Mua applications
   TITLE:=Mua OW Test
   DEPENDS:=@TARGET_ramips_mt7688_LinkIt7688
