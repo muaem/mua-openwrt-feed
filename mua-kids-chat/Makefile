@@ -14,7 +14,7 @@ PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_SOURCE_VERSION).tar.gz
 include $(INCLUDE_DIR)/package.mk
 
 define Package/mua-kids-chat
-  SECTION:=utils
+  SECTION:=Mua applications
   CATEEGORY:=Mua applications
   TITLE:=Mua Kids Chat
   DEPENDS:=+libmraa +libubus +libubox +libblobmsg-json +libjson-c +libmosquitto +libpthread +libcares +alsa-lib +libpolarssl +libcurl
@@ -34,6 +34,7 @@ define Package/mua-kids-chat/install
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/mua_miod_service $(1)/usr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/mua_file_service $(1)/usr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/mua_snd_service $(1)/usr/bin
+	$(CP) ./files/* $(1)
 endef
 
 $(eval $(call BuildPackage,mua-kids-chat))
