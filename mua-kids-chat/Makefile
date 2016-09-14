@@ -34,6 +34,7 @@ define Package/mua-kids-chat/install
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/mua_miod_service $(1)/usr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/mua_file_service $(1)/usr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/mua_snd_service $(1)/usr/bin
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/mua_msg_service $(1)/usr/bin
 	$(CP) ./files/* $(1)
 endef
 
