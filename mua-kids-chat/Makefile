@@ -18,6 +18,7 @@ define Package/mua-kids-chat
   CATEEGORY:=Mua applications
   TITLE:=Mua Kids Chat
   DEPENDS:=+libmraa +libubus +libubox +libblobmsg-json +libjson-c +libmosquitto +libpthread +libcares +alsa-lib +libpolarssl +libcurl
+  DEFAULT:=y
 endef
 
 define Package/mua-kids-chat/description
