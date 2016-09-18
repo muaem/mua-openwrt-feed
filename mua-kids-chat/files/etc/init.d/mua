@@ -1,1 +1,25 @@
-#!/bin/sh /etc/rc.commonSTART=99start(){    /usr/bin/mua_main_service 2>&1 > /dev/null &    sleep 1    /usr/bin/mua_mqtt_service 2>&1 > /dev/null &    /usr/bin/mua_miod_service 2>&1  > /dev/null &    /usr/bin/mua_file_service 2>&1 > /dev/null &    /usr/bin/mua_snd_service 2>&1 > /dev/null &    /usr/bin/mua_msg_service 2>&1 > /dev/null &    sleep 5    ubus call mua.main.service start {}}
+#!/bin/sh /etc/rc.common
+
+START=99
+
+start()
+{
+    # set pin mux
+    mt7688_pinmux set ephy gpio
+    mt7688_pinmux set pwm0 gpio
+    mt7688_pinmux set pwm1 gpio
+    mt7688_pinmux set uart2 gpio
+
+    # start mua service
+    # main service MUST start first of all
+    /usr/bin/mua_main_service 2>&1 > /dev/null &
+    sleep 1
+    # other service start after main service
+    /usr/bin/mua_mqtt_service 2>&1 > /dev/null &
+    /usr/bin/mua_miod_service 2>&1  > /dev/null &
+    /usr/bin/mua_file_service 2>&1 > /dev/null &
+    /usr/bin/mua_snd_service 2>&1 > /dev/null &
+    /usr/bin/mua_msg_service 2>&1 > /dev/null &
+    sleep 5
+    ubus call mua.main.service start {}
+}
