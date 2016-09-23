@@ -21,7 +21,7 @@ start()
     /usr/bin/mua_snd_service  &
     /usr/bin/mua_msg_service  &
     # test nfc, for demo only
-    /usr/bin/mua_nfc_service 2>&1 > /dev/null &
+    [ -x /usr/bin/nfcd ] && nfcd 2>&1 > /dev/null &
     sleep 5
     ubus call mua.main.service start {}
 }

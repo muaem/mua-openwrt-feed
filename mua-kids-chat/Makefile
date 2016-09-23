@@ -8,7 +8,7 @@ PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=git@git.muabaobao.com:depot/mua-kids-chat.git
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
-PKG_SOURCE_VERSION:=d38fdffd719d7b219e9d873f73e3b61a8c4f23a1
+PKG_SOURCE_VERSION:=HEAD
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_SOURCE_VERSION).tar.gz
 
 include $(INCLUDE_DIR)/package.mk
@@ -36,7 +36,6 @@ define Package/mua-kids-chat/install
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/mua_file_service $(1)/usr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/mua_snd_service $(1)/usr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/mua_msg_service $(1)/usr/bin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/mua_nfc_service $(1)/usr/bin
 	$(CP) ./files/* $(1)
 endef
 
