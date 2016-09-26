@@ -38,6 +38,7 @@ define Package/miod/install
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/$(MAKE_PATH)/btnd $(1)/usr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/$(MAKE_PATH)/ledd $(1)/usr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/$(MAKE_PATH)/nfcd $(1)/usr/bin
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/$(MAKE_PATH)/pn532-util $(1)/usr/bin
 	$(CP) ./files/* $(1)/
 endef
 
