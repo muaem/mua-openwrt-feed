@@ -37,10 +37,12 @@ define Package/mua-kids-chat/install
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/mua_main_service $(1)/usr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/mua_mqtt_service $(1)/usr/bin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/mua_miod_service $(1)/usr/bin
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/mua_io_service $(1)/usr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/mua_file_service $(1)/usr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/mua_snd_service $(1)/usr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/mua_msg_service $(1)/usr/bin
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/mua_nfc_service $(1)/usr/bin
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/pn532-util $(1)/usr/bin
 	$(CP) ./files/* $(1)
 endef
 

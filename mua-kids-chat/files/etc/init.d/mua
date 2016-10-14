@@ -16,12 +16,11 @@ start()
     sleep 1
     # other service start after main service
     /usr/bin/mua_mqtt_service &
-    /usr/bin/mua_miod_service &
+    /usr/bin/mua_io_service &
     /usr/bin/mua_file_service &
     /usr/bin/mua_snd_service  &
     /usr/bin/mua_msg_service  &
-    # test nfc, for demo only
-    [ -x /usr/bin/nfcd ] && nfcd 2>&1 > /dev/null &
+    /usr/bin/mua_nfc_service 2>&1 > /dev/null &
     sleep 5
     ubus call mua.main.service start {}
 }
