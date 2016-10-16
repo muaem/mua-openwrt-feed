@@ -69,19 +69,19 @@ endef
 
 define Package/nfc-freefare-utils/install
 	$(INSTALL_DIR) $(1)/usr/bin
-	$(CP0 $(PKG_INSTALL_DIR)/usr/bin/mifare-classic-format $(1)/usr/bin/
-	$(CP0 $(PKG_INSTALL_DIR)/usr/bin/mifare-classic-read-ndef $(1)/usr/bin/
-	$(CP0 $(PKG_INSTALL_DIR)/usr/bin/mifare-classic-write-ndef $(1)/usr/bin/
-	$(CP0 $(PKG_INSTALL_DIR)/usr/bin/mifare-desfire-access $(1)/usr/bin/
-	$(CP0 $(PKG_INSTALL_DIR)/usr/bin/mifare-desfire-create-ndef $(1)/usr/bin/
-	$(CP0 $(PKG_INSTALL_DIR)/usr/bin/mifare-desfire-ev1-configure-ats $(1)/usr/bin/
-	$(CP0 $(PKG_INSTALL_DIR)/usr/bin/mifare-desfire-ev1-configure-default-key $(1)/usr/bin/
-	$(CP0 $(PKG_INSTALL_DIR)/usr/bin/mifare-desfire-ev1-configure-random-uid $(1)/usr/bin/
-	$(CP0 $(PKG_INSTALL_DIR)/usr/bin/mifare-desfire-format $(1)/usr/bin/
-	$(CP0 $(PKG_INSTALL_DIR)/usr/bin/mifare-desfire-info $(1)/usr/bin/
-	$(CP0 $(PKG_INSTALL_DIR)/usr/bin/mifare-desfire-read-ndef $(1)/usr/bin/
-	$(CP0 $(PKG_INSTALL_DIR)/usr/bin/mifare-desfire-write-ndef $(1)/usr/bin/
-	$(CP0 $(PKG_INSTALL_DIR)/usr/bin/mifare-ultralight-info $(1)/usr/bin/
+	$(CP) $(PKG_INSTALL_DIR)/usr/bin/mifare-classic-format $(1)/usr/bin/
+	$(CP) $(PKG_INSTALL_DIR)/usr/bin/mifare-classic-read-ndef $(1)/usr/bin/
+	$(CP) $(PKG_INSTALL_DIR)/usr/bin/mifare-classic-write-ndef $(1)/usr/bin/
+	$(CP) $(PKG_INSTALL_DIR)/usr/bin/mifare-desfire-access $(1)/usr/bin/
+	$(CP) $(PKG_INSTALL_DIR)/usr/bin/mifare-desfire-create-ndef $(1)/usr/bin/
+	$(CP) $(PKG_INSTALL_DIR)/usr/bin/mifare-desfire-ev1-configure-ats $(1)/usr/bin/
+	$(CP) $(PKG_INSTALL_DIR)/usr/bin/mifare-desfire-ev1-configure-default-key $(1)/usr/bin/
+	$(CP) $(PKG_INSTALL_DIR)/usr/bin/mifare-desfire-ev1-configure-random-uid $(1)/usr/bin/
+	$(CP) $(PKG_INSTALL_DIR)/usr/bin/mifare-desfire-format $(1)/usr/bin/
+	$(CP) $(PKG_INSTALL_DIR)/usr/bin/mifare-desfire-info $(1)/usr/bin/
+	$(CP) $(PKG_INSTALL_DIR)/usr/bin/mifare-desfire-read-ndef $(1)/usr/bin/
+	$(CP) $(PKG_INSTALL_DIR)/usr/bin/mifare-desfire-write-ndef $(1)/usr/bin/
+	$(CP) $(PKG_INSTALL_DIR)/usr/bin/mifare-ultralight-info $(1)/usr/bin/
 
 endef
 
