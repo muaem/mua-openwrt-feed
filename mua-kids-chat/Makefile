@@ -17,7 +17,7 @@ define Package/mua-kids-chat
 	SECTION:=Mua applications
 	CATEEGORY:=Mua applications
 	TITLE:=Mua Kids Chat
-	DEPENDS:=+libmraa +libubus +libubox +libblobmsg-json +libjson-c +libmosquitto +libpthread +libcares +alsa-lib +libpolarssl +libcurl
+	DEPENDS:=+libspeex +libuuid  +libogg  +libmraa +libubus +libubox +libblobmsg-json +libjson-c +libmosquitto +libpthread +libcares +alsa-lib +libpolarssl +libcurl +libmpg123
 	DEFAULT:=y
 endef
 
@@ -25,7 +25,7 @@ define Package/mua-kids-chat/description
   Mua Kids Chat
 endef
 
-EXTRA_LDFLAGS += -lmraa -lubus -lubox -lblobmsg_json -ljson-c -lmosquitto -lpthread -lcares -lasound -lpolarssl -lcurl
+EXTRA_LDFLAGS += -luuid -lspeex -logg  -lmraa -lubus -lubox -lblobmsg_json -ljson-c -lmosquitto -lpthread -lcares -lasound -lpolarssl -lcurl -lmpg123
 TARGET_CFLAGS+= -Wall
 MAKE_PATH:=src
 
@@ -41,8 +41,6 @@ define Package/mua-kids-chat/install
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/mua_file_service $(1)/usr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/mua_snd_service $(1)/usr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/mua_msg_service $(1)/usr/bin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/mua_nfc_service $(1)/usr/bin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/pn532-util $(1)/usr/bin
 	$(CP) ./files/* $(1)
 endef
 
